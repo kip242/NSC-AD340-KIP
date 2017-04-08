@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FirstAssignment</string>
+    <string name="user_name">Hello, my name is Kip</string>
+    <string name="user_fact">I have 3 kids with a 4th on the way</string>
+    <string name="multi_line">Hello, \nmy name is Kip\nI have 3 kids with a 4th on the way!\nI am
+    really looking forward to making some android apps.</string>
+</resources>
