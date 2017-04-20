@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\a00faea6a3250c3fd62316820560967d5531748a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c9b86be42cc405b25e720953ae8a98b1f1500a16\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0434a4c23d196833773cfa13aa1f72ff5b6ca47d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\82f9ed20ee92d32c38737a1cc9953c63ba7d612b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e8dedb8d66718ae14928c2ecf30cca21a6e4bff5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\6298e174489e583657feca0e10ad00e04c22989a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a4be5fa5b721cab801eb39e06d5e99bb8e9f6916\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_1269f400748eb1f923f19cc4e782c9c7688a53cd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-alpha7\constraint-layout-solver-1.0.0-alpha7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="439eeb5ffd54cbd18db0a6aea471e8356f19fc36">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.0-alpha7_d471b4cd49a213d752f9cb8375a18cfb56740f69\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\ff15c6599b444af2bbea4f7f6c9ee63f20a617ea\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ddb95a2ed27ac18ede5017a1b82e3bffb7097f04\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\bc80ddbd7a2812c3496fe6e4b71804b28e42be44\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b71910028abe6655a236a824f28ddadd390f1f1c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\e5ed40f054fd8b918098e1d40063130c677104ad\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c426c79a1be595183b537df56638be83836cf459\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\5944dfa92b5c5e8959543a6a24acc78aa2f5ca41\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9dfdc1dbb433b39ae40181bb034a11bb8c3a512a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\628664b07b5a0c39152c052e739a6acec7a61534\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1d0614c80c3e329a91f43a4899fdd57d97857489\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1dd6f8d021e6df7868ab3c6514d62d7b44debbbc">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_f94b537cea3030722cb5639c4065058e1536a477\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\6209473cf1bca4f2f9efff365cb387ea09723c27\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b24f0c260f54c8dbee868e8b8f524da8c471655e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Kip\.android\build-cache\859a78d6bcd67c886f044e00fa74d302bd1bfe7d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="541a2ad68dc68aa49795821f8280b7624e6a0c9b">
+        <dex dex="C:\Users\Kip\AndroidStudioProjects\HelloWorld\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3a3d08469975451b2b3a3fc778fec41e026a591a\classes.dex" />
+    </item>
+
+</items>
