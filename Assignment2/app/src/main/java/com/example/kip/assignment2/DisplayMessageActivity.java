@@ -25,7 +25,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         if (message != null){
-            Log.d(TAG, "message received");
+            Log.d(TAG, "message sent to activity2");
         }
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.textView);
