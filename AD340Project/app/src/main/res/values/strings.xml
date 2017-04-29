@@ -2,7 +2,7 @@
     <string name="app_name">AD 340 Project</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
-    <string-array name="days_array">
+    <string-array name="array_values">
         <item>1</item>
         <item>2</item>
         <item>3</item>
