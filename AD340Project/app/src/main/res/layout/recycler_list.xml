@@ -9,10 +9,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
-        android:layout_gravity="left"
-        android:textSize="20dp"
+        android:layout_gravity="start"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/textColor"
         />
 
     <TextView
@@ -20,12 +20,12 @@
         android:layout_toRightOf="@+id/subject_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginLeft="12dp"
+        android:layout_gravity="end"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20dp"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

@@ -10,23 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayMessageActivity"
-            android:parentActivityName=".MainActivity">
-            <!--The meta-data is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
+        <activity
+            android:name=".DisplayMessageActivity"
+            android:label="@string/display_message_activity"
+            android:parentActivityName=".MainActivity" />
 
         <activity
-            android:name=".RecyclerActivity"/>
+            android:name=".RecyclerActivity"
+            android:label="@string/recycler_view_activity"/>
 
     </application>
 

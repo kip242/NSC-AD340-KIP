@@ -10,9 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by Kip on 4/27/2017.
- */
+
 
 public class RecyclerActivity extends AppCompatActivity {
     Context context;
@@ -21,36 +19,37 @@ public class RecyclerActivity extends AppCompatActivity {
     RecyclerView.LayoutManager recyclerViewLayoutManager;
 
     // 2D data array
-    String[][] subjects=
+    String[][] subjects =
             {
-                    { "ANDROID", "1" },
-                    { "PHP", "2" },
-                    { "JSON", "3" },
-                    { "SWIFT", "4" },
-                    { "OBJECTIVE-C", "5" },
-                    { "SQL", "" },
-                    { "JAVA", "" },
-                    { "JAVASCRIPT", "" },
-                    { "REACT", "" },
-                    { "PYTHON", "" },
-                    { "ANGULAR", "" },
-                    { "JQUERY", "" },
-                    { "CANVAS", "" },
-                    { "D3", "" },
-                    { "MATPLOTLIB", "" },
-                    { "NODE", "" }
+                    { "DAD", "70" },
+                    { "MOM", "68" },
+                    { "ME", "39" },
+                    { "WIFE", "36" },
+                    { "DILLON", "9" },
+                    { "FITZ", "3" },
+                    { "HANNAH", "2" },
+                    { "ELLIOT", "NB" },
+                    { "LUCIUS", "6" },
+                    { "KIM", "45" },
+                    { "ELIZABETH", "37" },
+                    { "REBECCA", "36" },
+                    { "BRENDAN", "38" },
+                    { "ETHAN", "9" },
+                    { "MEGHAN", "7" },
+                    { "MICHAEL", "15" }
             };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_activity);
-
+        //Intent intent = getIntent();
         context = getApplicationContext();
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
-        //linear layout
         recyclerViewLayoutManager = new LinearLayoutManager(context);
+        //linear layout
+        recyclerViewLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(recyclerViewLayoutManager);
 
         recyclerViewAdapter = new RecyclerViewAdapter();

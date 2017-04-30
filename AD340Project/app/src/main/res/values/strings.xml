@@ -2,6 +2,8 @@
     <string name="app_name">AD 340 Project</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name="display_message_activity">Message Display</string>
+    <string name="recycler_view_activity">RecyclerView</string>
     <string-array name="array_values">
         <item>1</item>
         <item>2</item>

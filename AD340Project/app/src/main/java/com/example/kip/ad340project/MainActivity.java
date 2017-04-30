@@ -1,27 +1,15 @@
 package com.example.kip.ad340project;
 
-
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
