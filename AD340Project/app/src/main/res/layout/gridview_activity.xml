@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kip.ad340project.GridviewActivity">
+
+    <include
+
+        layout="@layout/toolbar"
+
+        android:layout_marginBottom="-8383dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridview"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <GridView
+
+        android:id="@+id/gridview"
+        android:layout_width="270dp"
+        android:layout_height="147dp"
+        android:layout_marginBottom="265dp"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:textFilterEnabled="false"
+        android:verticalSpacing="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+       <!-- app:layout_constraintTop_toBottomOf="@+id/include4"-->
+        <!--app:layout_constraintVertical_bias="1.0" />-->
+
+</android.support.constraint.ConstraintLayout>
