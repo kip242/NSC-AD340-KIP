@@ -34,9 +34,6 @@ public class FabActivity extends AppCompatActivity {
                 startActivity(goToGridview);
             }
         });*/
-
-
-
     }
 
     //record onStart to Logcat

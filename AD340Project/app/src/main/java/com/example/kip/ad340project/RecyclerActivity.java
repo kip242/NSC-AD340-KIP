@@ -10,17 +10,41 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 public class RecyclerActivity extends AppCompatActivity {
     Context context;
+    TextView mTextView = (TextView) findViewById(R.id.text);
     RecyclerView recyclerView;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
 
+    RequestQueue queue = Volley.newRequestQueue(this);
+    String url ="http://www.google.com";
+
+    StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+            new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    // Display the first 500 characters of the response string.
+                    mTextView.setText("Response is: "+ response.substring(0,500));
+                }
+            }, new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            mTextView.setText("That didn't work!");
+        }
+    });
+// Add the request to the RequestQueue.
+queue.add(stringRequest);
+
     // 2D data array
-    String[][] subjects =
+   /* String[][] subjects =
             {
                     { "DAD", "70" },
                     { "MOM", "68" },
@@ -38,7 +62,7 @@ public class RecyclerActivity extends AppCompatActivity {
                     { "ETHAN", "9" },
                     { "MEGHAN", "7" },
                     { "MICHAEL", "15" }
-            };
+            };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +96,7 @@ public class RecyclerActivity extends AppCompatActivity {
                 mTitle = (TextView) v.findViewById(R.id.subject_1);
                 mDetail = (TextView) v.findViewById(R.id.subject_2);
             }
+
         }
 
         @Override
@@ -100,5 +125,8 @@ public class RecyclerActivity extends AppCompatActivity {
             return subjects.length;
         }
     }
+
 }
+
+
 
