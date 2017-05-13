@@ -34,7 +34,7 @@
 
         <activity
             android:name=".AboutActivity"
-            android:label="AboutView"
+            android:label="@string/about_view"
             android:parentActivityName=".MainActivity"/>
 
         <activity
@@ -51,6 +51,11 @@
             android:name=".GridviewActivity"
             android:label="@string/gridview_activity"
             android:parentActivityName=".FabActivity"/>
+
+        <activity
+            android:name=".RecyclerWebActivity"
+            android:label="@string/web_recycler_title"
+            android:parentActivityName=".MainActivity"/>
 
 
     </application>

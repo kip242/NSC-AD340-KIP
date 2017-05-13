@@ -12,6 +12,7 @@
     <string name="pick_color_title">Select a Color</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="web_recycler_title">Recycler Web Activity</string>
     <string-array name="color_array">
         <item>Red</item>
         <item>Blue</item>

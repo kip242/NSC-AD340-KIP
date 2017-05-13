@@ -20,4 +20,10 @@
         android:id="@+id/app_bar_recyclerview"
         android:title="RecyclerView">
     </item>
+
+    <item
+        android:id="@+id/app_bar_webrecyclerview"
+        android:title="RecyclerWebView">
+    </item>
+
 </menu>

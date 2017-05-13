@@ -107,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
               Intent goToRecyclerActivity = new Intent(getBaseContext(), RecyclerActivity.class);
               startActivity(goToRecyclerActivity);
               return true;
+          case R.id.app_bar_webrecyclerview:
+              Intent goToWebRecyclerActivity = new Intent(getBaseContext(), RecyclerWebActivity.class);
+              startActivity(goToWebRecyclerActivity);
+              return true;
           default:
               return super.onOptionsItemSelected(item);
       }
