@@ -28,8 +28,6 @@ import java.util.List;
 
 public class RecyclerWebActivity extends AppCompatActivity {
     Context context;
-    //TextView result;
-    //String data;
     RecyclerView recyclerView;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
@@ -53,6 +51,9 @@ public class RecyclerWebActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
         recyclerViewLayoutManager = new LinearLayoutManager(context);
 
+        recyclerViewLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(recyclerViewLayoutManager);
+
         recyclerViewAdapter = new RecyclerWebActivity.CustomAdapter();
         recyclerView.setAdapter(recyclerViewAdapter);
 
@@ -61,16 +62,10 @@ public class RecyclerWebActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
                 try {
-                    // Retrieves first JSON object in outer array
-                    JSONObject colorObj = response.getJSONObject(0);
-                    // Retrieves "colorArray" from the JSON object
-                    JSONArray colorArry = colorObj.getJSONArray("colorArray");
                     for (int i = 0; i < response.length(); i++) {
-                        JSONObject jsonObject = colorArry.getJSONObject(i);
                         String[] color = new String[2];
-                        color[0] = jsonObject.getString("colorName");
-                        color[1] = jsonObject.getString("hexValue");
-                        //data += "Color Name: " + color + "\nHex Value: " + hex +"\n\n\n";
+                        color[0] = response.getJSONObject(i).getString("colorName");
+                        color[1] = response.getJSONObject(i).getString("hexValue");
                         result.add(color);
                     }
                     //refresh of recycler view
