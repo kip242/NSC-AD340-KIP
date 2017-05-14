@@ -4,18 +4,28 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/subject_1"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/textColor"
-        />
+        android:textColor="@color/textColor" />
 
     <TextView
-        android:id="@+id/subject_2"
-        android:layout_toRightOf="@+id/subject_1"
+        android:id="@+id/dial_code"
+        android:layout_toRightOf="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="7dp"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/code"
+        android:layout_toRightOf="@+id/dial_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"

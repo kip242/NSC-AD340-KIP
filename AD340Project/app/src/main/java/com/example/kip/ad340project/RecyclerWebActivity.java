@@ -32,7 +32,7 @@ public class RecyclerWebActivity extends AppCompatActivity {
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
 
-    String url = "https://raw.githubusercontent.com/ianbar20/JSON-Volley-Tutorial/master/Example-JSON-Files/Example-Array.JSON";
+    String url = "http://dtatum.icoolshow.net/ad340/country.json";
 
     //2D Array to hold country name and country code
     List<String[]> result = new ArrayList<String[]>();
@@ -63,9 +63,10 @@ public class RecyclerWebActivity extends AppCompatActivity {
             public void onResponse(JSONArray response) {
                 try {
                     for (int i = 0; i < response.length(); i++) {
-                        String[] color = new String[2];
-                        color[0] = response.getJSONObject(i).getString("colorName");
-                        color[1] = response.getJSONObject(i).getString("hexValue");
+                        String[] color = new String[3];
+                        color[0] = response.getJSONObject(i).getString("name");
+                        color[1] = response.getJSONObject(i).getString("dial_code");
+                        color[2] = response.getJSONObject(i).getString("code");
                         result.add(color);
                     }
                     //refresh of recycler view
@@ -88,13 +89,15 @@ public class RecyclerWebActivity extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             //country name and code strings
-            public TextView mColor;
-            public TextView mHexValue;
+            public TextView mCName;
+            public TextView mDialCode;
+            public TextView mCCode;
 
             public ViewHolder(View v) {
                 super(v);
-                mColor = (TextView) v.findViewById(R.id.subject_1);
-                mHexValue = (TextView) v.findViewById(R.id.subject_2);
+                mCName = (TextView) v.findViewById(R.id.name);
+                mDialCode= (TextView) v.findViewById(R.id.dial_code);
+                mCCode = (TextView) v.findViewById(R.id.code);
             }
         }
 
@@ -111,8 +114,9 @@ public class RecyclerWebActivity extends AppCompatActivity {
         // replace contents of a view (Required by layout manager)
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.mColor.setText(result.get(position)[0]);
-            holder.mHexValue.setText(result.get(position)[1]);
+            holder.mCName.setText(result.get(position)[0]);
+            holder.mDialCode.setText(result.get(position)[1]);
+            holder.mCCode.setText(result.get(position)[2]);
         }
 
         //Return size of dataset (Required by layout manager)

@@ -85,8 +85,8 @@ public class RecyclerActivity extends AppCompatActivity {
 
                 public ViewHolder(View v) {
                     super(v);
-                    mTitle = (TextView) v.findViewById(R.id.subject_1);
-                    mDetail = (TextView) v.findViewById(R.id.subject_2);
+                    mTitle = (TextView) v.findViewById(R.id.name);
+                    mDetail = (TextView) v.findViewById(R.id.dial_code);
                 }
 
             }
