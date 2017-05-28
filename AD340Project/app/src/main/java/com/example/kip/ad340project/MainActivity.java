@@ -111,6 +111,10 @@ public class MainActivity extends AppCompatActivity {
               Intent goToWebRecyclerActivity = new Intent(getBaseContext(), RecyclerWebActivity.class);
               startActivity(goToWebRecyclerActivity);
               return true;
+          case R.id.app_bar_location:
+              Intent goToGetCurrentLocation = new Intent(getBaseContext(), GetCurrentLocation.class);
+              startActivity(goToGetCurrentLocation);
+              return true;
           default:
               return super.onOptionsItemSelected(item);
       }

@@ -7,8 +7,11 @@
     tools:context="com.example.kip.ad340project.DisplayMessageActivity">
 
     <include layout="@layout/toolbar"
-        tools:layout_editor_absoluteX="0dp"
-        android:id="@+id/include3" />
+        android:id="@+id/include3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/textView"

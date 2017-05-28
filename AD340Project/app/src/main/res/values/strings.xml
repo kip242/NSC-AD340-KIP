@@ -13,6 +13,9 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="web_recycler_title">Recycler Web Activity</string>
+    <string name="latitude_label">Latitude</string>
+    <string name="longitude_label">Longitude</string>
+    <string name="no_location">No Location Detected. Please make sure location is enabled</string>
     <string-array name="color_array">
         <item>Red</item>
         <item>Blue</item>

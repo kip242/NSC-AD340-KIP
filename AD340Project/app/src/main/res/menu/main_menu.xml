@@ -26,4 +26,9 @@
         android:title="RecyclerWebView">
     </item>
 
+    <item
+        android:id="@+id/app_bar_location"
+        android:title="Get Current Location">
+    </item>
+
 </menu>
