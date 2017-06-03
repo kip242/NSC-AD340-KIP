@@ -34,19 +34,7 @@ public class GridviewActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, btn_values);
         gridview.setAdapter(adapter);
 
-        //this is previous assignment gridview code, I wanted to keep a record of it
-       /* gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                if (position == 0) {
-                    Intent goToImageDisplay = new Intent(getBaseContext(), ImageDisplay.class);
-                    startActivity(goToImageDisplay);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Cell Number" + position, Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });*/
 
     }
 }

@@ -13,9 +13,15 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="web_recycler_title">Recycler Web Activity</string>
+    <string name="location_activity">Get Current Location</string>
     <string name="latitude_label">Latitude</string>
     <string name="longitude_label">Longitude</string>
     <string name="no_location">No Location Detected. Please make sure location is enabled</string>
+    <string name="service_not_available">Service Not Available</string>
+    <string name="invalid_lat_long_used">Invalid Latitude/Longitude</string>
+    <string name="no_address_found">Address Not Found</string>
+    <string name="address_found">Address Located</string>
+    <string name="location_label">Location</string>
     <string-array name="color_array">
         <item>Red</item>
         <item>Blue</item>
