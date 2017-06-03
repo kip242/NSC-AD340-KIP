@@ -56,22 +56,6 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginStart="16dp" />
 
-    <GridView
-        android:id="@+id/gridview"
-        android:layout_width="270dp"
-        android:layout_height="147dp"
-        android:layout_marginTop="51dp"
-        android:columnWidth="90dp"
-        android:gravity="center"
-        android:horizontalSpacing="10dp"
-        android:numColumns="2"
-        android:stretchMode="columnWidth"
-        android:textFilterEnabled="false"
-        android:verticalSpacing="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="77dp"
@@ -83,6 +67,22 @@
         app:layout_constraintTop_toBottomOf="@+id/gridview"
         android:layout_marginRight="16dp"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="270dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="72dp"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:textFilterEnabled="false"
+        android:verticalSpacing="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
 
 </android.support.constraint.ConstraintLayout>
