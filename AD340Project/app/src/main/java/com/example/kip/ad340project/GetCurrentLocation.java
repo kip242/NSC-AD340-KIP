@@ -44,12 +44,9 @@ public class GetCurrentLocation extends AppCompatActivity implements
     //location variables
     protected boolean mAddressRequested;
     protected String mAddressOutput;
-    //private Location mLocationRequest;
     protected Location mLastLocation;
     private LocationRequest mLocationRequest;
 
-   // protected String mLatitude;
-    //protected String mLongitude;
     protected TextView mLatitudeText;
     protected TextView mLongitudeText;
     protected TextView mLocationText;
@@ -91,16 +88,14 @@ public class GetCurrentLocation extends AppCompatActivity implements
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             updateUI();
         } else {
-            // Should we show an explanation?
+
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
 
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
+               //would need to code to further explain freeing up space to get access
+                //fine location
 
             } else {
-
 
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
@@ -114,15 +109,14 @@ public class GetCurrentLocation extends AppCompatActivity implements
                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION:
-                // If request is cancelled, the result arrays are empty.
+                // cancel request for emty result array, in the case permissions
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted, yay! Do the
-                    // location-related task you need to do.
+
                     updateUI();
                 }
                 break;
-            //add more 'cases' if app asks more permissions
+            //add more 'cases' if app asks more permissions if neccessary
         }
     }
 
