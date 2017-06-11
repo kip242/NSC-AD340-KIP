@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.support.v4.app.DialogFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     public static final String EXTRA_MESSAGE = "com.example.kip.assignment2.MESSAGE";
     private static final String TAG = DisplayMessageActivity.class.getSimpleName();
 

@@ -3,6 +3,8 @@ package com.example.kip.ad340project;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 
 import android.os.Bundle;
@@ -31,6 +33,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.List;
+import java.util.Locale;
 
 
 public class GetCurrentLocation extends AppCompatActivity implements
@@ -82,7 +87,7 @@ public class GetCurrentLocation extends AppCompatActivity implements
 
     @Override
     public void onConnected(Bundle connectionHint) {
-        if (ContextCompat.checkSelfPermission(this,
+        if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
@@ -108,14 +113,18 @@ public class GetCurrentLocation extends AppCompatActivity implements
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION:
-                // cancel request for emty result array, in the case permissions
+            case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
+                // cancel request for empty result array, in the case permissions
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                     updateUI();
+                } else {
+                    //permission denied
                 }
-                break;
+
+                return;
+            }
             //add more 'cases' if app asks more permissions if neccessary
         }
     }
@@ -124,7 +133,6 @@ public class GetCurrentLocation extends AppCompatActivity implements
     public void onMapReady(GoogleMap googleMap) {
         //store map object until we get lat/long
         mMap = googleMap;
-
     }
 
     public void updateUI() {
@@ -169,12 +177,13 @@ public class GetCurrentLocation extends AppCompatActivity implements
     }
 
     protected synchronized void buildGoogleApiClient() {
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(LocationServices.API)
-                .build();
-        mGoogleApiClient.connect();
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
     }
 
     protected void createLocationRequest() {
@@ -215,8 +224,8 @@ public class GetCurrentLocation extends AppCompatActivity implements
     }
 
     // Data received from FetchAddressIntentService.
-    private class AddressResultReceiver extends ResultReceiver {
-        private AddressResultReceiver(Handler handler) {
+     class AddressResultReceiver extends ResultReceiver {
+        public AddressResultReceiver(Handler handler) {
             super(handler);
         }
 
@@ -232,7 +241,6 @@ public class GetCurrentLocation extends AppCompatActivity implements
             if (resultCode == Constants.SUCCESS_RESULT) {
                 showToast(getString(R.string.address_found));
             }
-
             // Reset. Enable the Fetch Address button and stop showing the progress bar.
             mAddressRequested = false;
         }

@@ -1,7 +1,11 @@
 package com.example.kip.ad340project;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +32,13 @@ import java.util.List;
 
 
 public class RecyclerWebActivity extends AppCompatActivity {
+
+
     Context context;
     RecyclerView recyclerView;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
+    TextView mErrorText;
 
     String url = "http://dtatum.icoolshow.net/ad340/country.json";
 
@@ -46,43 +54,77 @@ public class RecyclerWebActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+        isNetworkConnectionAvailable();
         context = getApplicationContext();
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
-        recyclerViewLayoutManager = new LinearLayoutManager(context);
+            recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
+            recyclerViewLayoutManager = new LinearLayoutManager(context);
 
-        recyclerViewLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(recyclerViewLayoutManager);
+            recyclerViewLayoutManager = new LinearLayoutManager(this);
+            recyclerView.setLayoutManager(recyclerViewLayoutManager);
 
-        recyclerViewAdapter = new RecyclerWebActivity.CustomAdapter();
-        recyclerView.setAdapter(recyclerViewAdapter);
+            recyclerViewAdapter = new RecyclerWebActivity.CustomAdapter();
+            recyclerView.setAdapter(recyclerViewAdapter);
 
-        RequestQueue queue = Volley.newRequestQueue(this);
-        JsonArrayRequest jsonReq = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                try {
-                    for (int i = 0; i < response.length(); i++) {
-                        String[] color = new String[3];
-                        color[0] = response.getJSONObject(i).getString("name");
-                        color[1] = response.getJSONObject(i).getString("dial_code");
-                        color[2] = response.getJSONObject(i).getString("code");
-                        result.add(color);
+            RequestQueue queue = Volley.newRequestQueue(this);
+            JsonArrayRequest jsonReq = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+                @Override
+                public void onResponse(JSONArray response) {
+                    try {
+                        for (int i = 0; i < response.length(); i++) {
+                            String[] countryInfo = new String[3];
+                            countryInfo[0] = response.getJSONObject(i).getString("name");
+                            countryInfo[1] = response.getJSONObject(i).getString("dial_code");
+                            countryInfo[2] = response.getJSONObject(i).getString("code");
+                            result.add(countryInfo);
+                        }
+                        //refresh of recycler view
+                        recyclerViewAdapter.notifyDataSetChanged();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                    //refresh of recycler view
-                    recyclerViewAdapter.notifyDataSetChanged();
-                } catch (JSONException e) {
-                    e.printStackTrace();
                 }
-            }
-        }, new Response.ErrorListener() {
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("JSON", "Error: " + error.getMessage());
+                }
+            });
+            //add to RequestQueue
+            queue.add(jsonReq);
+
+    }
+
+    public void checkNetworkConnection(){
+        AlertDialog.Builder builder =new AlertDialog.Builder(this);
+        builder.setTitle("No internet Connection");
+        builder.setMessage("Please turn on internet connection to continue");
+        builder.setNegativeButton("close", new DialogInterface.OnClickListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("JSON", "Error: " + error.getMessage());
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
             }
         });
-        //add to RequestQueue
-        queue.add(jsonReq);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public boolean isNetworkConnectionAvailable(){
+        ConnectivityManager cm =
+                (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+        if(isConnected) {
+            Log.d("Network", "Connected");
+            return true;
+        }
+        else{
+            checkNetworkConnection();
+            Log.d("Network","Not Connected");
+            return false;
+        }
     }
 
     public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {

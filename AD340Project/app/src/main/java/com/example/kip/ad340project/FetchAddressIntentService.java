@@ -79,6 +79,7 @@ public class FetchAddressIntentService extends IntentService {
                     location.getLatitude(),
                     location.getLongitude(),
                     1);
+            Log.d(TAG, "Success");
         } catch (IOException ioException) {
             // Catch network or other I/O problems.
             errorMessage = getString(R.string.service_not_available);

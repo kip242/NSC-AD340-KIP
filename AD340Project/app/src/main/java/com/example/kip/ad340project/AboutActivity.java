@@ -23,8 +23,8 @@ public class AboutActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView textView = (TextView) findViewById(R.id.aboutView);
-        String about = "This is a conversion app.  This app will allow you to do various types of " +
-                "conversion.  You will be able to do distance, measurement, and temperature conversions.";
+        String about = "This is an app that shows some basic results of programming assignments" +
+                "of the AD 340 class at North Seattle College";
 
         textView.setText(about);
     }

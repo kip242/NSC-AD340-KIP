@@ -9,12 +9,11 @@
 
     <include
 
-        layout="@layout/toolbar"
-
-        android:layout_marginBottom="-8383dp"
+        layout="@layout/toolbar"/>
+        <!--android:layout_marginBottom="-8383dp"
         app:layout_constraintBottom_toTopOf="@+id/gridview"
         android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"-->
 
     <GridView
 

@@ -22,6 +22,7 @@
     <string name="no_address_found">Address Not Found</string>
     <string name="address_found">Address Located</string>
     <string name="location_label">Location</string>
+    <string name="connection_error">Sorry, there was a connection error! Please Try Again.</string>
     <string-array name="color_array">
         <item>Red</item>
         <item>Blue</item>
