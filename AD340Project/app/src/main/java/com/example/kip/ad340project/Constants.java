@@ -3,8 +3,7 @@ package com.example.kip.ad340project;
 /**
  * Created by Kip on 6/1/2017.
  */
-
-public class Constants {
+ public class Constants {
     public static final int SUCCESS_RESULT = 0;
     public static final int FAILURE_RESULT = 1;
     public static final String PACKAGE_NAME = "com.kt.kip.ad340project";

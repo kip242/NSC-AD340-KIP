@@ -97,7 +97,7 @@ public class GetCurrentLocation extends AppCompatActivity implements
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
 
-               //would need to code to further explain freeing up space to get access
+                //would need to code to further explain freeing up space to get access
                 //fine location
 
             } else {
@@ -123,7 +123,7 @@ public class GetCurrentLocation extends AppCompatActivity implements
                     //permission denied
                 }
 
-                return;
+                // return;
             }
             //add more 'cases' if app asks more permissions if neccessary
         }
@@ -133,6 +133,8 @@ public class GetCurrentLocation extends AppCompatActivity implements
     public void onMapReady(GoogleMap googleMap) {
         //store map object until we get lat/long
         mMap = googleMap;
+
+
     }
 
     public void updateUI() {
@@ -195,7 +197,7 @@ public class GetCurrentLocation extends AppCompatActivity implements
 
     protected void startLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                ==PackageManager.PERMISSION_GRANTED) {
+                == PackageManager.PERMISSION_GRANTED) {
             LocationServices.FusedLocationApi.requestLocationUpdates(
                     mGoogleApiClient, mLocationRequest, this);
         }
@@ -224,7 +226,7 @@ public class GetCurrentLocation extends AppCompatActivity implements
     }
 
     // Data received from FetchAddressIntentService.
-     class AddressResultReceiver extends ResultReceiver {
+    class AddressResultReceiver extends ResultReceiver {
         public AddressResultReceiver(Handler handler) {
             super(handler);
         }
@@ -246,26 +248,26 @@ public class GetCurrentLocation extends AppCompatActivity implements
         }
     }
 
-        protected void onStart() {
-            mGoogleApiClient.connect();
-            super.onStart();
-        }
+    protected void onStart() {
+        mGoogleApiClient.connect();
+        super.onStart();
+    }
 
-        @Override
-        protected void onPause() {
-            super.onPause();
-            LocationServices.FusedLocationApi.removeLocationUpdates(
-                    mGoogleApiClient, this);
-        }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LocationServices.FusedLocationApi.removeLocationUpdates(
+                mGoogleApiClient, this);
+    }
 
-        protected void onStop() {
-            super.onStop();
-            if (mGoogleApiClient.isConnected()) {
-                mGoogleApiClient.disconnect();
-            }
+    protected void onStop() {
+        super.onStop();
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
         }
     }
 
+}
 
 
 

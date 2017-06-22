@@ -21,12 +21,12 @@ android {
         }
     }
     compileSdkVersion 25
-    buildToolsVersion "25.0.2" //change back to 25.0.2
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.kt.kip.ad340project"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 4 //Need to manually update this each time you upload to Dev Account
+        versionCode 5 //Need to manually update this each time you upload to Dev Account
         //cannot have 2 of the same versions of app
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -37,7 +37,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
-            debuggable true
+            debuggable false
             jniDebuggable false
             renderscriptDebuggable false
         }

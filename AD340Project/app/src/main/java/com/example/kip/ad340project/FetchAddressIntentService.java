@@ -101,7 +101,7 @@ public class FetchAddressIntentService extends IntentService {
             deliverResultToReceiver(Constants.FAILURE_RESULT, errorMessage);
         } else {
             Address address = addresses.get(0);
-            ArrayList<String> addressFragments = new ArrayList<String>();
+            ArrayList<String> addressFragments = new ArrayList<>();
 
             //Fetch address lines using getAddressLine
             for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
