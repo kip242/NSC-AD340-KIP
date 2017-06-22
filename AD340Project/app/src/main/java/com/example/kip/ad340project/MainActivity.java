@@ -11,20 +11,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.support.v4.app.DialogFragment;
+import android.widget.GridView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  {
     public static final String EXTRA_MESSAGE = "com.example.kip.assignment2.MESSAGE";
     private static final String TAG = DisplayMessageActivity.class.getSimpleName();
 
+    String[] btn_values = {"Display Image", "Button 2", "Button 3", "Button 4"};
     Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);//creates layout
+        setContentView(R.layout.activity_main);//creates layout, maybe change back to activity_main
 
         context = getApplicationContext();
         Log.d(TAG, "onCreate()");
@@ -42,6 +47,18 @@ public class MainActivity extends AppCompatActivity  {
                 //create dialog and show on FAB click
                 DialogFragment newFragment = new PickColorDialogFragment();
                 newFragment.show(getSupportFragmentManager(), "color");
+            }
+        });
+
+        //create gridview and show toast when item clicked
+        GridView gridview = (GridView) findViewById(R.id.gridview);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, btn_values);
+        gridview.setAdapter(adapter);
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+                Toast.makeText(MainActivity.this, "" + position,
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -82,7 +99,7 @@ public class MainActivity extends AppCompatActivity  {
      */
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
+        EditText editText = (EditText) findViewById(R.id.editText2);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
